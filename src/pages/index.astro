@@ -5,36 +5,41 @@ const featured = [
   {
     name: "machine",
     href: "https://github.com/sid6i7/machine",
+    glyph: "⌬",
     blurb:
-      "A WhatsApp-resident product coordination agent for my engineering team. Runs on my personal account. LLM-classifies team messages into a 5-intent backlog, chases morning tasklists and EOD standups over DM, syncs Sheets and GitLab MRs on cron, and fuzzy-matches MRs to product-sheet tasks.",
-    tags: ["TypeScript", "Baileys", "Fastify", "SQLite", "Gemini", "HTMX"],
-  },
-  {
-    name: "perplexed",
-    href: "https://github.com/sid6i7/perplexed",
-    blurb:
-      "A Discord bot that answers questions by reading Reddit. Searches for relevant posts, pulls top comments, and feeds them to Gemini with a prompt that grounds the answer in what real people actually said.",
-    tags: ["Python", "discord.py", "PRAW", "Gemini"],
+      "A WhatsApp-resident product coordination agent for my engineering team. LLM-classifies team messages into a 5-intent backlog, chases morning tasklists and EOD standups over DM, syncs Sheets and GitLab MRs.",
+    tags: ["TypeScript", "Baileys", "Fastify", "SQLite", "Gemini"],
   },
   {
     name: "bolhousie",
     href: "https://github.com/sid6i7/bolhousie",
+    glyph: "◐",
     blurb:
-      "Tambola, but the numbers are iconic Indian brands and the caller announces taglines. Browser-based, peer-to-peer multiplayer with no backend. Host's tab is the source of truth.",
-    tags: ["Next.js", "React 19", "TypeScript", "PeerJS", "WebRTC"],
+      "Tambola, but the numbers are iconic Indian brands and the caller announces taglines. Browser-based, peer-to-peer multiplayer with no backend.",
+    tags: ["Next.js", "React 19", "PeerJS", "WebRTC"],
+  },
+  {
+    name: "perplexed",
+    href: "https://github.com/sid6i7/perplexed",
+    glyph: "✺",
+    blurb:
+      "A Discord bot that answers questions by reading Reddit. Pulls top comments and grounds Gemini's answer in what real people actually said.",
+    tags: ["Python", "discord.py", "PRAW", "Gemini"],
   },
   {
     name: "newsverse",
     href: "https://github.com/sid6i7/newsverse",
+    glyph: "❖",
     blurb:
-      "A small news aggregator with AI summarization. Search across articles, clean single-column reading layout, one-tap summaries via Gemini.",
-    tags: ["Next.js", "ShadCN", "Tailwind", "Genkit", "Gemini"],
+      "A small news aggregator with AI summarization. Clean single-column reading layout, search across articles, one-tap summaries via Gemini.",
+    tags: ["Next.js", "Genkit", "Gemini", "Tailwind"],
   },
   {
     name: "programming-guide",
     href: "https://github.com/sid6i7/programming-guide",
+    glyph: "◇",
     blurb:
-      "Ask a programming question, get the most relevant Stack Overflow questions and Medium articles. GloVe embeddings + cosine similarity, dockerized end to end.",
+      "Ask a programming question, get the most relevant Stack Overflow questions and Medium articles. GloVe embeddings + cosine similarity, dockerized.",
     tags: ["React", "FastAPI", "GloVe", "Docker"],
   },
 ];
@@ -43,36 +48,36 @@ const other = [
   {
     name: "citation-finder",
     href: "https://github.com/sid6i7/citation-finder",
-    blurb:
-      "Given an LLM response and a set of possible sources, figures out which sources the response was actually drawn from.",
-    tags: ["Python", "FastAPI", "SentenceTransformers"],
+    glyph: "❡",
+    blurb: "Given an LLM response and possible sources, figures out which sources the response actually used.",
+    tags: ["Python", "FastAPI", "Sentence-Transformers"],
   },
   {
     name: "corrective-rag",
     href: "https://github.com/sid6i7/corrective-rag",
-    blurb:
-      "A LangGraph-style corrective RAG implementation. Ingests URLs into a Chroma store, retrieves, self-grades, and falls back to web search.",
+    glyph: "↻",
+    blurb: "A LangGraph-style corrective RAG. Retrieves, self-grades, falls back to web search when retrieval is weak.",
     tags: ["Python", "LangGraph", "ChromaDB"],
   },
   {
     name: "youtube-toolkit",
     href: "https://github.com/sid6i7/youtube-toolkit",
-    blurb:
-      "Caption fetching, BART summarization, sentiment + readability, and chat-with-video over a Chroma index using a local Vicuna 7B.",
-    tags: ["Python", "Transformers", "LangChain", "Vicuna"],
+    glyph: "▶",
+    blurb: "Caption fetching, BART summarization, sentiment, and chat-with-video over a Chroma index using local Vicuna 7B.",
+    tags: ["Python", "Transformers", "LangChain"],
   },
   {
     name: "Artzy",
     href: "https://github.com/sid6i7/Artzy",
-    blurb:
-      "Flutter web app for artists to host online galleries and for art enthusiasts to browse them. From college.",
-    tags: ["Flutter", "Django", "MySQL", "Firebase"],
+    glyph: "✦",
+    blurb: "Flutter web app for artists to host galleries and for art enthusiasts to browse them. From college.",
+    tags: ["Flutter", "Django", "Firebase"],
   },
   {
     name: "hotel-reviews-scraper",
     href: "https://github.com/sid6i7/hotel-reviews-scraper",
-    blurb:
-      "An early Selenium scraper for TripAdvisor hotel reviews. One of the first scrapers I wrote.",
+    glyph: "◬",
+    blurb: "An early Selenium scraper for TripAdvisor hotel reviews. One of the first scrapers I wrote.",
     tags: ["Python", "Selenium", "BeautifulSoup"],
   },
 ];
@@ -82,29 +87,26 @@ const work = [
     company: "Beyond Chats",
     period: "Jun 2024 to present",
     location: "Remote",
+    color: "var(--color-accent)",
     roles: [
       {
         title: "Tech Lead",
         period: "Mar 2025 to present",
         bullets: [
-          "Lead a 4-person engineering team (3 web devs + 1 ML/AI intern) shipping for 10+ enterprise clients across healthcare and SaaS.",
-          "Run 15-day sprint cycles end to end: backlog, reviews, MR reviews, retrospectives, weekly customer-success syncs.",
-          "Set up dev and staging environments and GitLab CI/CD with a self-hosted runner, unblocking parallel team delivery.",
+          "Lead a 4-person engineering team shipping for 10+ enterprise clients across healthcare and SaaS.",
+          "Set up dev and staging environments and GitLab CI/CD with a self-hosted runner.",
           "Architected an LLM-based sub-ticketing and intent-classification layer that auto-routes inbound chats into the right support, sales, or app-assistance queue.",
-          "Designed a hybrid rules-and-LLM suppression layer for healthcare clients that escalates medically sensitive conversations to clinical staff.",
-          "Launched a WhatsApp bulk-messaging product (Meta Graph API, OAuth, scheduled campaigns, S3-backed template media) for client marketing and sales teams.",
-          "Shipped a multilingual voice chatbot and a HeyGen-based video chatbot across healthcare clients.",
+          "Launched a WhatsApp bulk-messaging product, a multilingual voice chatbot, and a HeyGen-based video chatbot for healthcare clients.",
         ],
       },
       {
         title: "ML & Backend Engineer",
         period: "Jun 2024 to Mar 2025",
         bullets: [
-          "Designed the multi-tenant OOP Python chatbot framework that serves all our clients from a single codebase using inheritance and polymorphism.",
-          "Built a rule-based intent classifier that pre-routes queries before LLM invocation, cutting token usage by 60 to 70 percent across all clients.",
-          "Reduced patient-facing response time on a healthcare client's knowledge base from 6 seconds to under 1 (Fuse.js search, model switching, context pruning, over 6,200+ records).",
-          "Reduced LLM hallucinations significantly via internal-thought prompting, citation-grounded responses, and hybrid retrieval with keyword re-ranking.",
-          "Integrated Meta WhatsApp and Instagram Graph APIs for real-time inbound messaging; built chat-analytics APIs for lead detection, feedback extraction, and topic analysis.",
+          "Designed the multi-tenant OOP Python chatbot framework that serves all our clients from a single codebase.",
+          "Built a rule-based intent classifier that cuts token usage by 60 to 70 percent across all clients.",
+          "Reduced patient-facing response time on a healthcare client's knowledge base from 6 seconds to under 1.",
+          "Reduced LLM hallucinations via internal-thought prompting and citation-grounded responses.",
         ],
       },
     ],
@@ -113,12 +115,13 @@ const work = [
     company: "Sophos Knowledge Services",
     period: "May 2023 to Jul 2023",
     location: "Indore",
+    color: "var(--color-muted)",
     roles: [
       {
         title: "Data Science Intern",
         period: "",
         bullets: [
-          "Worked on US-accidents data analysis and methods for synthetic data generation.",
+          "Worked on US-accidents data analysis and synthetic data generation.",
           "Trained Word2Vec embeddings on a mental-health QnA dataset.",
         ],
       },
@@ -128,6 +131,7 @@ const work = [
     company: "Ignis Tech Solutions",
     period: "2022",
     location: "Indore",
+    color: "var(--color-muted)",
     roles: [
       {
         title: "Intern",
@@ -147,181 +151,223 @@ const work = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Siddhant Jain. Tech lead at Beyond Chats. Builds LLM-powered conversational products."
-    />
+    <meta name="description" content="Siddhant Jain. Tech lead at Beyond Chats. Builds LLM-powered conversational products." />
     <meta property="og:title" content="Siddhant Jain" />
-    <meta
-      property="og:description"
-      content="Tech lead at Beyond Chats. Builds LLM-powered conversational products."
-    />
+    <meta property="og:description" content="Tech lead at Beyond Chats. Builds LLM-powered conversational products." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sid6i7.github.io" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
     <title>Siddhant Jain</title>
   </head>
   <body class="min-h-screen">
-    <!-- TOP BAR -->
-    <header class="border-b border-[var(--color-rule)] bg-[var(--color-paper)] sticky top-0 z-10 backdrop-blur-sm bg-white/85">
+    <!-- TOP NAV -->
+    <header class="border-b border-[var(--color-rule)] bg-white/90 backdrop-blur sticky top-0 z-20">
       <div class="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
-        <a href="#" class="text-sm font-medium text-[var(--color-ink)] hover:no-underline" style="font-family: var(--font-serif);">sid<span class="text-[var(--color-accent)]">.</span></a>
-        <nav class="flex items-center gap-5 text-xs mono">
-          <a href="#about" class="hover:text-[var(--color-ink)]">about</a>
+        <a href="#" class="text-base font-medium text-[var(--color-ink)]" style="font-family: var(--font-serif);">sid<span class="text-[var(--color-accent)]">.</span></a>
+        <nav class="flex items-center gap-5 mono-up">
           <a href="#projects" class="hover:text-[var(--color-ink)]">projects</a>
           <a href="#work" class="hover:text-[var(--color-ink)]">work</a>
+          <a href="#about" class="hover:text-[var(--color-ink)]">about</a>
           <a href="#contact" class="hover:text-[var(--color-ink)]">contact</a>
         </nav>
       </div>
     </header>
 
-    <div class="mx-auto max-w-6xl px-6 py-12 lg:py-16 lg:grid lg:grid-cols-[18rem_1fr] lg:gap-16">
-      <!-- SIDEBAR -->
-      <aside class="lg:sticky lg:top-20 lg:self-start space-y-6 mb-12 lg:mb-0">
-        <div>
-          <h1 class="sidebar-name">Siddhant Jain</h1>
-          <p class="mt-2 text-[var(--color-muted)] text-[14px] leading-snug">
-            Tech lead at Beyond Chats.<br/>I build LLM-powered products.
-          </p>
-        </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="mx-auto max-w-6xl px-6 py-20 lg:py-32 relative">
+        <div class="mono-up mb-6">Indore, India · UTC+05:30</div>
 
-        <div class="flex flex-col gap-1.5 text-sm">
-          <a href="mailto:siddhantjain209@gmail.com" class="flex items-center gap-2">
-            <span class="mono text-[10px]" style="text-transform: none; letter-spacing: 0;">↳</span>
-            siddhantjain209@gmail.com
-          </a>
-          <a href="https://github.com/sid6i7" target="_blank" rel="noopener" class="flex items-center gap-2">
-            <span class="mono text-[10px]" style="text-transform: none; letter-spacing: 0;">↳</span>
-            github.com/sid6i7
-          </a>
-          <a href="https://linkedin.com/in/siddhant-jain-4b9913223" target="_blank" rel="noopener" class="flex items-center gap-2">
-            <span class="mono text-[10px]" style="text-transform: none; letter-spacing: 0;">↳</span>
-            linkedin
-          </a>
-        </div>
+        <h1 class="hero-name">
+          Siddhant<br/>Jain<span class="text-[var(--color-accent)]">.</span>
+        </h1>
 
-        <div class="rounded-md border border-[var(--color-rule)] p-4 bg-[var(--color-cream)] space-y-2 text-[13px]">
-          <p class="section-label" style="margin-bottom: 0.25rem;">currently</p>
-          <p><span class="text-[var(--color-muted)]">building</span> <span>an LLM-powered PM agent over WhatsApp.</span></p>
-          <p><span class="text-[var(--color-muted)]">reading</span> <span>The Three-Body Problem.</span></p>
-          <p><span class="text-[var(--color-muted)]">watching</span> <span>The Expanse.</span></p>
-          <p><span class="text-[var(--color-muted)]">eating</span> <span>too much at the new place down the road.</span></p>
-        </div>
+        <div class="hero-rule mt-8"></div>
 
-        <p class="mono text-[10px] leading-relaxed" style="letter-spacing: 0.06em;">
-          Indore, India · UTC+05:30
+        <p class="mt-6 text-[18px] lg:text-[20px] max-w-xl leading-relaxed text-[var(--color-ink)]">
+          I lead engineering at Beyond Chats, where four of us ship LLM-powered conversational products for ten-plus enterprise clients.
         </p>
-      </aside>
 
-      <!-- MAIN -->
-      <main class="space-y-20">
-        <!-- ABOUT -->
-        <section id="about">
-          <span class="section-label">01 / about</span>
-          <div class="space-y-4 text-[15.5px] leading-relaxed max-w-prose">
-            <p>
+        <div class="mt-8 flex flex-wrap gap-4 mono-up">
+          <a href="mailto:siddhantjain209@gmail.com" class="hover:text-[var(--color-ink)]">→ email</a>
+          <a href="https://github.com/sid6i7" target="_blank" rel="noopener" class="hover:text-[var(--color-ink)]">→ github</a>
+          <a href="https://linkedin.com/in/siddhant-jain-4b9913223" target="_blank" rel="noopener" class="hover:text-[var(--color-ink)]">→ linkedin</a>
+          <a href="#projects" class="hover:text-[var(--color-ink)]">→ projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-mark">
+      <span class="line"></span>
+      <span class="star"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-6xl px-6">
+      <div class="flex items-baseline justify-between mb-8">
+        <div>
+          <span class="mono-up">02 / projects</span>
+          <h2 class="text-3xl lg:text-4xl mt-2">Things I've built<span class="text-[var(--color-accent)]">.</span></h2>
+        </div>
+        <span class="mono hidden lg:inline">five featured · five other</span>
+      </div>
+
+      <!-- featured grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {featured.map((p, i) => (
+          <a href={p.href} target="_blank" rel="noopener" class={`project-card no-underline ${i === 0 ? 'lg:col-span-2' : ''}`} style="color: inherit;">
+            <div class="project-thumb" style={i === 0 ? `background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-accent-tint) 100%); height: 180px;` : ''}>
+              <span class="glyph" style={i === 0 ? 'font-size: 6rem;' : ''}>{p.glyph}</span>
+            </div>
+            <div class="meta">
+              <div class="title">{p.name}</div>
+              <p class="blurb">{p.blurb}</p>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                {p.tags.map((t) => <span class="tag">{t}</span>)}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- other grid -->
+      <div class="mt-12">
+        <span class="mono-up block mb-4">also</span>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {other.map((p) => (
+            <a href={p.href} target="_blank" rel="noopener" class="project-card no-underline" style="color: inherit;">
+              <div class="project-thumb" style="height: 90px;">
+                <span class="glyph" style="font-size: 2.2rem;">{p.glyph}</span>
+              </div>
+              <div class="meta">
+                <div class="title" style="font-size: 1rem;">{p.name}</div>
+                <p class="blurb">{p.blurb}</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  {p.tags.map((t) => <span class="tag">{t}</span>)}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-mark">
+      <span class="line"></span>
+      <span class="star"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- WORK -->
+    <section id="work" class="mx-auto max-w-6xl px-6">
+      <span class="mono-up">03 / work</span>
+      <h2 class="text-3xl lg:text-4xl mt-2 mb-10">Where I've worked<span class="text-[var(--color-accent)]">.</span></h2>
+
+      <div class="space-y-12">
+        {work.map((w, idx) => (
+          <div class="grid grid-cols-1 lg:grid-cols-[10rem_1fr] gap-x-8 gap-y-3 relative">
+            <div>
+              <div class="mono-up" style="color: var(--color-ink);">{w.period}</div>
+              <div class="mono mt-1">{w.location}</div>
+            </div>
+            <div class="border-l border-[var(--color-rule)] pl-6 lg:pl-8 relative">
+              <span class="absolute -left-[5px] top-1 w-[9px] h-[9px] rounded-full" style={`background: ${w.color};`}></span>
+              <h3 class="text-xl">{w.company}</h3>
+              <div class="mt-4 space-y-6">
+                {w.roles.map((r) => (
+                  <div>
+                    <p class="text-[14px]">
+                      <span class="font-medium">{r.title}</span>
+                      {r.period && <span class="text-[var(--color-muted)]"> · {r.period}</span>}
+                    </p>
+                    <ul class="mt-2 space-y-1.5 text-[14px] leading-relaxed list-none">
+                      {r.bullets.map((b) => (
+                        <li class="pl-4 relative">
+                          <span class="absolute left-0 top-[10px] w-[6px] h-[1px]" style="background: var(--color-muted);"></span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-mark">
+      <span class="line"></span>
+      <span class="star"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- ABOUT + NOW -->
+    <section id="about" class="mx-auto max-w-6xl px-6">
+      <div class="grid lg:grid-cols-[1fr_18rem] gap-12">
+        <div>
+          <span class="mono-up">04 / about</span>
+          <h2 class="text-3xl lg:text-4xl mt-2 mb-8">A little more<span class="text-[var(--color-accent)]">.</span></h2>
+          <div class="space-y-5 text-[16px] leading-relaxed">
+            <p class="drop-cap">
               Outside work I'm usually chasing good food in whichever city I'm in, or three episodes deep into something sci-fi. Dune and Arrival on the cinema side, The Expanse and Severance on TV.
             </p>
             <p>
               The job that pays for the biryani: I lead engineering at Beyond Chats. There are four of us building LLM-powered conversational products for ten-plus enterprise clients. I was the first ML and backend hire there, so a lot of what runs today is code I wrote in the early days.
             </p>
           </div>
-        </section>
+        </div>
 
-        <!-- PROJECTS -->
-        <section id="projects">
-          <span class="section-label">02 / projects</span>
-          <h2 class="text-2xl mb-6">Things I've built</h2>
+        <aside class="now-card self-start space-y-2 text-[13.5px]">
+          <p class="mono-up" style="margin-bottom: 0.5rem;">now</p>
+          <p><span class="text-[var(--color-muted)] mono" style="text-transform: lowercase; font-size: 11px;">building</span><br/>an LLM-powered PM agent over WhatsApp.</p>
+          <p><span class="text-[var(--color-muted)] mono" style="text-transform: lowercase; font-size: 11px;">reading</span><br/>The Three-Body Problem.</p>
+          <p><span class="text-[var(--color-muted)] mono" style="text-transform: lowercase; font-size: 11px;">watching</span><br/>The Expanse.</p>
+          <p><span class="text-[var(--color-muted)] mono" style="text-transform: lowercase; font-size: 11px;">eating</span><br/>too much at the new place down the road.</p>
+        </aside>
+      </div>
+    </section>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            {featured.map((p) => (
-              <article class="card flex flex-col">
-                <div class="card-title">
-                  <a href={p.href} target="_blank" rel="noopener">{p.name}</a>
-                </div>
-                <p class="mt-2 text-[14px] leading-relaxed text-[var(--color-ink)] flex-1">{p.blurb}</p>
-                <div class="mt-3 flex flex-wrap gap-1.5">
-                  {p.tags.map((t) => <span class="tag">{t}</span>)}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <h3 class="mt-10 mb-4 text-base text-[var(--color-muted)] section-label" style="margin-bottom: 1rem;">also</h3>
-          <div class="grid sm:grid-cols-2 gap-3">
-            {other.map((p) => (
-              <article class="card flex flex-col" style="padding: 0.85rem 1rem;">
-                <div class="card-title" style="font-size: 0.95rem;">
-                  <a href={p.href} target="_blank" rel="noopener">{p.name}</a>
-                </div>
-                <p class="mt-1.5 text-[13.5px] leading-snug text-[var(--color-ink)] flex-1">{p.blurb}</p>
-                <div class="mt-2 flex flex-wrap gap-1">
-                  {p.tags.map((t) => <span class="tag" style="font-size: 10px;">{t}</span>)}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <!-- WORK -->
-        <section id="work">
-          <span class="section-label">03 / work</span>
-          <h2 class="text-2xl mb-6">Where I've worked</h2>
-
-          <div class="space-y-10">
-            {work.map((w) => (
-              <div class="grid grid-cols-[6rem_1fr] gap-x-6 gap-y-3 lg:grid-cols-[7rem_1fr]">
-                <div class="mono text-[11px] pt-1">{w.period}</div>
-                <div>
-                  <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 class="text-lg font-medium" style="font-family: var(--font-serif);">{w.company}</h3>
-                    <span class="text-[12px] text-[var(--color-muted)]">{w.location}</span>
-                  </div>
-                  <div class="mt-3 space-y-5">
-                    {w.roles.map((r) => (
-                      <div>
-                        <p class="text-[14px]">
-                          <span class="font-medium">{r.title}</span>
-                          {r.period && <span class="text-[var(--color-muted)]"> · {r.period}</span>}
-                        </p>
-                        <ul class="mt-2 space-y-1.5 text-[14px] leading-relaxed list-none">
-                          {r.bullets.map((b) => (
-                            <li class="pl-4 relative">
-                              <span class="absolute left-0 top-[10px] w-[6px] h-[1px] bg-[var(--color-muted)]"></span>
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="border-t border-[var(--color-rule)] pt-10">
-          <span class="section-label">04 / contact</span>
-          <h2 class="text-2xl mb-3">Say hi</h2>
-          <p class="text-[15px] max-w-prose">
-            I'm reachable at <a href="mailto:siddhantjain209@gmail.com">siddhantjain209@gmail.com</a>. I read every cold email that isn't a sales pitch, and I try to reply within a day.
-          </p>
-        </section>
-
-        <footer class="pt-10 border-t border-[var(--color-rule)] flex flex-wrap items-center justify-between gap-3 text-[12px] text-[var(--color-muted)]">
-          <p>© {new Date().getFullYear()} Siddhant Jain</p>
-          <p class="mono" style="font-size: 10px;">made in indore with astro + tailwind</p>
-        </footer>
-      </main>
+    <!-- DIVIDER -->
+    <div class="section-mark">
+      <span class="line"></span>
+      <span class="star"></span>
+      <span class="line"></span>
     </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-6xl px-6">
+      <div class="rounded-xl p-8 lg:p-12 relative overflow-hidden" style="background: var(--color-night); color: #f5f5f5;">
+        <div class="absolute inset-0 opacity-30 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #ffffff 0.8px, transparent 0.8px), radial-gradient(circle at 80% 70%, #ffffff 0.6px, transparent 0.6px), radial-gradient(circle at 60% 20%, #ffffff 0.5px, transparent 0.5px), radial-gradient(circle at 30% 80%, #ffffff 0.7px, transparent 0.7px), radial-gradient(circle at 90% 40%, #ffffff 0.4px, transparent 0.4px);"></div>
+        <div class="relative">
+          <span class="mono-up" style="color: #a0a0a0;">05 / contact</span>
+          <h2 class="text-3xl lg:text-4xl mt-2 mb-4" style="color: #f5f5f5;">Say hi<span style="color: var(--color-accent);">.</span></h2>
+          <p class="text-[15px] max-w-prose" style="color: #c8c8c8;">
+            I read every cold email that isn't a sales pitch and try to reply within a day. Easiest at
+            <a href="mailto:siddhantjain209@gmail.com" style="color: #7db8ff; border-bottom: 1px solid currentColor;">siddhantjain209@gmail.com</a>.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 mono-up" style="color: #a0a0a0;">
+            <a href="mailto:siddhantjain209@gmail.com" style="color: #c8c8c8;">→ email</a>
+            <a href="https://github.com/sid6i7" target="_blank" rel="noopener" style="color: #c8c8c8;">→ github</a>
+            <a href="https://linkedin.com/in/siddhant-jain-4b9913223" target="_blank" rel="noopener" style="color: #c8c8c8;">→ linkedin</a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-10 mb-12 flex flex-wrap items-center justify-between gap-3 text-[12px] text-[var(--color-muted)]">
+        <p>© {new Date().getFullYear()} Siddhant Jain</p>
+        <p class="mono" style="font-size: 10px;">made in indore · astro + tailwind</p>
+      </footer>
+    </section>
   </body>
 </html>
