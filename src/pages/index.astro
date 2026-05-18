@@ -1,0 +1,256 @@
+---
+import "../styles/global.css";
+import Divider from "../components/Divider.astro";
+import ProjectEntry from "../components/ProjectEntry.astro";
+
+const featured = [
+  {
+    name: "machine",
+    href: "https://github.com/sid6i7/machine",
+    blurb:
+      "A WhatsApp-resident product coordination agent for my engineering team. Runs on my personal account, LLM-classifies team messages into a 5-intent backlog, chases morning tasklists and EOD standups over DM, syncs Sheets and GitLab MRs on cron, and fuzzy-matches MRs to product-sheet tasks. Has cut a real chunk of my coordination overhead.",
+    stack: "TypeScript, Node.js, Fastify, SQLite, Baileys, Gemini, HTMX, node-cron",
+  },
+  {
+    name: "perplexed",
+    href: "https://github.com/sid6i7/perplexed",
+    blurb:
+      "A Discord bot that answers your questions by reading Reddit. It searches for relevant posts, pulls top comments, and feeds them to Gemini with a prompt that grounds the answer in what real people actually said.",
+    stack: "Python, discord.py, PRAW, Gemini",
+  },
+  {
+    name: "bolhousie",
+    href: "https://github.com/sid6i7/bolhousie",
+    blurb:
+      "Tambola, but the numbers are iconic Indian brands and the caller announces taglines instead of numbers. Browser-based, peer-to-peer multiplayer with no backend. Host's tab is the source of truth.",
+    stack: "Next.js, React 19, TypeScript, PeerJS, WebRTC",
+  },
+  {
+    name: "newsverse",
+    href: "https://github.com/sid6i7/newsverse",
+    blurb:
+      "A small news aggregator with AI summarization. Clean single-column reading layout, search across articles, and one-tap summaries using Gemini via Genkit.",
+    stack: "Next.js, ShadCN UI, Tailwind, Genkit, Gemini",
+  },
+  {
+    name: "programming-guide",
+    href: "https://github.com/sid6i7/programming-guide",
+    blurb:
+      "Ask a programming question, get the most relevant Stack Overflow questions and Medium articles. Embeds queries and titles with GloVe, ranks with cosine similarity, dockerised end to end.",
+    stack: "React, FastAPI, GloVe, Docker, Nginx",
+  },
+];
+
+const other = [
+  {
+    name: "citation-finder",
+    href: "https://github.com/sid6i7/citation-finder",
+    blurb:
+      "Given an LLM response and a set of possible sources, figures out which sources the response was actually drawn from. SentenceTransformers + cosine similarity.",
+    stack: "Python, React, FastAPI, SentenceTransformers",
+  },
+  {
+    name: "corrective-rag",
+    href: "https://github.com/sid6i7/corrective-rag",
+    blurb:
+      "A LangGraph-style corrective RAG implementation. Ingests URLs into a local vector store, retrieves, self-grades the retrieved chunks, and falls back to a web search when retrieval is weak.",
+    stack: "Python, LangGraph, ChromaDB",
+  },
+  {
+    name: "youtube-toolkit",
+    href: "https://github.com/sid6i7/youtube-toolkit",
+    blurb:
+      "Caption fetching, BART summarisation, sentiment + readability analysis, and chat-with-video over a Chroma index using a locally loaded Vicuna 7B.",
+    stack: "Python, Transformers, LangChain, Chroma, Vicuna",
+  },
+  {
+    name: "Artzy",
+    href: "https://github.com/sid6i7/Artzy",
+    blurb:
+      "A Flutter web app for artists to host online galleries and for art enthusiasts to browse them. Firebase auth, Django backend, MySQL. From college.",
+    stack: "Flutter, Django, MySQL, Firebase",
+  },
+  {
+    name: "hotel-reviews-scraper",
+    href: "https://github.com/sid6i7/hotel-reviews-scraper",
+    blurb:
+      "An early Selenium scraper for TripAdvisor hotel reviews. Searches a hotel, picks one from the dropdown, and saves all reviews to a CSV. One of the first scrapers I wrote.",
+    stack: "Python, Selenium, BeautifulSoup",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Siddhant Jain. Tech lead at Beyond Chats. Builds LLM-powered conversational products."
+    />
+    <meta property="og:title" content="Siddhant Jain" />
+    <meta
+      property="og:description"
+      content="Tech lead at Beyond Chats. I build LLM-powered conversational products."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sid6i7.github.io" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Siddhant Jain</title>
+  </head>
+  <body class="min-h-screen">
+    <main class="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+      <!-- HEADER -->
+      <header class="mb-12">
+        <h1 class="text-4xl sm:text-5xl font-medium tracking-tight">
+          Siddhant Jain
+        </h1>
+        <p class="mt-2 text-[var(--color-muted)]">
+          Tech lead at Beyond Chats. I build LLM-powered products.
+        </p>
+        <nav class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+          <a href="mailto:siddhantjain209@gmail.com">email</a>
+          <a href="https://github.com/sid6i7" target="_blank" rel="noopener">github</a>
+          <a href="https://linkedin.com/in/siddhant-jain-4b9913223" target="_blank" rel="noopener">linkedin</a>
+        </nav>
+      </header>
+
+      <!-- ABOUT -->
+      <section class="space-y-5 text-[17px] leading-relaxed">
+        <p>
+          Outside work I'm usually chasing good food in whichever city I'm in,
+          or three episodes deep into something sci-fi. Dune and Arrival on the
+          cinema side, The Expanse and Severance on TV.
+        </p>
+        <p>
+          The job that pays for the biryani: I lead engineering at Beyond
+          Chats. There are four of us building LLM-powered conversational
+          products for ten-plus enterprise clients. I was the first ML and
+          backend hire there, so a lot of what runs today is code I wrote in
+          the early days.
+        </p>
+      </section>
+
+      <Divider />
+
+      <!-- PROJECTS -->
+      <section>
+        <h2 class="text-2xl font-medium mb-6">Projects</h2>
+
+        <div class="space-y-8">
+          {featured.map((p) => <ProjectEntry {...p} />)}
+        </div>
+
+        <h3 class="mt-12 mb-6 text-lg text-[var(--color-muted)] font-medium" style="font-family: var(--font-sans);">
+          Other things I've built
+        </h3>
+
+        <div class="space-y-6">
+          {other.map((p) => <ProjectEntry {...p} dense />)}
+        </div>
+      </section>
+
+      <Divider />
+
+      <!-- EXPERIENCE -->
+      <section>
+        <h2 class="text-2xl font-medium mb-6">Work</h2>
+
+        <div class="space-y-8">
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-medium">Beyond Chats</h3>
+              <span class="text-sm text-[var(--color-muted)]">June 2024 to present, remote</span>
+            </div>
+            <div class="mt-3 space-y-4 text-[var(--color-ink)]">
+              <div>
+                <p class="text-sm text-[var(--color-muted)]">Tech Lead · March 2025 to present</p>
+                <p class="mt-1">
+                  Lead a 4-person engineering team (3 web devs + 1 ML/AI
+                  intern) shipping for 10+ enterprise clients. Sprint planning,
+                  reviews, retrospectives, MR reviews. Set up dev and staging
+                  environments and GitLab CI/CD with a self-hosted runner.
+                  Architected an LLM-based sub-ticketing and intent
+                  classification layer that auto-routes inbound chats into the
+                  right support, sales, or app-assistance queue. Launched a
+                  WhatsApp bulk-messaging product, a multilingual voice
+                  chatbot, and a HeyGen-based video chatbot for healthcare
+                  clients.
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-[var(--color-muted)]">ML &amp; Backend Engineer · June 2024 to March 2025</p>
+                <p class="mt-1">
+                  Designed the multi-tenant OOP Python chatbot framework that
+                  serves all our clients from a single codebase. Built a
+                  rule-based intent classifier that pre-routes queries before
+                  LLM invocation and cuts token usage by 60 to 70 percent. Got
+                  patient-facing response time on a healthcare client's
+                  knowledge base from 6 seconds to under 1. Reduced LLM
+                  hallucinations via internal-thought prompting,
+                  citation-grounded responses, and hybrid retrieval with
+                  re-ranking. Integrated Meta WhatsApp and Instagram Graph
+                  APIs for real-time inbound messaging.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-medium">Sophos Knowledge Services</h3>
+              <span class="text-sm text-[var(--color-muted)]">May 2023 to July 2023, Indore</span>
+            </div>
+            <p class="mt-1 text-sm text-[var(--color-muted)]">Data Science Intern</p>
+            <p class="mt-2">
+              Worked on US-accidents data analysis and methods for synthetic
+              data generation. Trained Word2Vec embeddings on a mental-health
+              QnA dataset.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="text-lg font-medium">Ignis Tech Solutions</h3>
+              <span class="text-sm text-[var(--color-muted)]">2022, Indore</span>
+            </div>
+            <p class="mt-1 text-sm text-[var(--color-muted)]">Intern</p>
+            <p class="mt-2">
+              My first internship. Wrote web scrapers in Python, and switched
+              to Linux as my daily driver. Have been on it ever since.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      <!-- FOOTER -->
+      <footer class="text-sm text-[var(--color-muted)]">
+        <p>
+          Indore, India. Reach me at
+          <a href="mailto:siddhantjain209@gmail.com">siddhantjain209@gmail.com</a>.
+        </p>
+        <p class="mt-2">© {new Date().getFullYear()} Siddhant Jain.</p>
+      </footer>
+    </main>
+
+    <script is:inline>
+      // tiny detail: smooth fade on first paint
+      document.body.style.opacity = "0";
+      requestAnimationFrame(() => {
+        document.body.style.transition = "opacity 240ms ease";
+        document.body.style.opacity = "1";
+      });
+    </script>
+  </body>
+</html>

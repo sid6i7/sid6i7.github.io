@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string;
+  href: string;
+  blurb: string;
+  stack: string;
+  dense?: boolean;
+}
+const { name, href, blurb, stack, dense = false } = Astro.props;
+---
+<article class={dense ? "" : ""}>
+  <h4 class={`font-medium ${dense ? "text-base" : "text-lg"}`}>
+    <a href={href} target="_blank" rel="noopener">{name}</a>
+  </h4>
+  <p class={`mt-1 ${dense ? "text-[15px]" : ""} text-[var(--color-ink)]`}>
+    {blurb}
+  </p>
+  <p class="mt-2 text-xs text-[var(--color-muted)]" style="font-family: var(--font-mono);">
+    {stack}
+  </p>
+</article>
